@@ -1,15 +1,8 @@
 import React, { useState, useEffect, memo } from "react";
 import { endPoints } from "../../utils/api/endpoints";
 import PokemonContainer from "../../components/PokemonContainer";
+import GridContainer from "../../components/GridContainer"
 import styled from "styled-components";
-
-const GridContainer = styled.div`
-  display: grid;
-  grid-column-gap: 50px;
-  grid-row-gap: 50px;
-  grid-template-columns: repeat(3, 286px);
-  justify-content: center;
-`;
 
 const List = () => {
   const [pokemons, setPokemons] = useState([]);
@@ -35,7 +28,6 @@ const List = () => {
 
   return (
     <div>
-      {/* // TODO: isolate the GridContainer outside this component? */}
       <GridContainer>
         {pokemons.length > 0 &&
           pokemons.map((item) => (

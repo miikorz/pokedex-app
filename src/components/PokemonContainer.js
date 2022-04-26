@@ -1,8 +1,9 @@
 import React from "react";
-import styled, { css } from "styled-components";
+import styled from "styled-components";
+import { useNavigate } from 'react-router-dom';
 
 const Container = styled.div`
-  border-radius: 10px;
+  border-radius: 5px;
   border: 2px solid black;
   padding: 10px;
   &:hover {
@@ -10,29 +11,37 @@ const Container = styled.div`
   }
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  align-items: center;
   cursor: pointer;
-  text-align: center;
+`;
+
+//TODO: image size bigger and position relative with z-index in order to make the effect of being above the container?
+const Image = styled.img`
+  height: 100px;
+  width: 100px;
+  margin-top: 30px;
+`;
+
+const TextContainer = styled.div`
   font-size: 20px;
-`;
-
-const Image = styled.image`
-
-  ${(props) =>
-    props.name &&
-    css`
-      background-image: url(https://img.pokemondb.net/sprites/black-white/anim/normal/${props.name}.gif);
-      color: white;
-      padding: 100px;
-      background-size: cover;
-    `}
-`;
+  margin-top: 50px;
+  margin-bottom: 20px;
+  text-transform: capitalize;
+`
 
 const PokemonContainer = ({ name }) => {
+  const navigate = useNavigate();
+
+  const onHandleClick = () => {
+    navigate(name);
+  }
+
   return (
-    <Container key={name}>
-      <Image name={name} />
-      {name}
+    <Container key={name} onClick={onHandleClick}>
+      <Image
+        src={`https://img.pokemondb.net/sprites/black-white/anim/normal/${name}.gif`}
+      />
+      <TextContainer>{name}</TextContainer>
     </Container>
   );
 };
