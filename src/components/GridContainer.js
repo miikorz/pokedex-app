@@ -1,5 +1,5 @@
-import React from "react";
-import styled from "styled-components";
+import React from 'react';
+import styled from 'styled-components';
 
 const GridDiv = styled.div`
   display: grid;
@@ -17,8 +17,8 @@ const GridDiv = styled.div`
   }
 `;
 
-const GridContainer = ({ children }) => {
+function GridContainer({ children }) {
   return <GridDiv>{children}</GridDiv>;
-};
+}
 
 export default GridContainer;

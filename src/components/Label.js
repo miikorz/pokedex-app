@@ -1,5 +1,5 @@
-import React from "react";
-import styled from "styled-components";
+import React from 'react';
+import styled from 'styled-components';
 
 const LabelDiv = styled.div`
   display: flex;
@@ -11,8 +11,8 @@ const LabelDiv = styled.div`
   color: #5E5E5E;
 `;
 
-const Label = ({ children }) => {
+function Label({ children }) {
   return <LabelDiv>{children}</LabelDiv>;
-};
+}
 
 export default Label;

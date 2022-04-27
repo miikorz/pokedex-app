@@ -1,9 +1,9 @@
-import React from "react";
-import styled from "styled-components";
-import { useNavigate } from "react-router-dom";
-import SectionContainer from "./SectionContainer";
-import Label from "./Label";
-import Text from "./Text";
+import React from 'react';
+import styled from 'styled-components';
+import { useNavigate } from 'react-router-dom';
+import SectionContainer from './SectionContainer';
+import Label from './Label';
+import Text from './Text';
 
 const Container = styled.div`
   margin: auto;
@@ -27,7 +27,7 @@ const ButtonContainer = styled.div`
   font-size: 20px;
 `;
 
-//TODO: image size bigger and position relative with z-index in order to make the effect of being above the container?
+// TODO: image size bigger and position relative with z-index in order to make the effect of being above the container?
 const Image = styled.img`
   height: 100px;
   width: 100px;
@@ -44,11 +44,13 @@ const NameContainer = styled.div`
   font-family: monospace;
 `;
 
-const PokemonDetail = ({ id, name, types, height, abilities }) => {
+function PokemonDetail({
+  id, name, types, height, abilities,
+}) {
   const navigate = useNavigate();
 
   const onHandleClick = () => {
-    navigate("/pokemon");
+    navigate('/pokemon');
   };
 
   return (
@@ -65,8 +67,8 @@ const PokemonDetail = ({ id, name, types, height, abilities }) => {
       <SectionContainer column>
         <Label>Type:</Label>
         <ul>
-          {types &&
-            types.map((item) => (
+          {types
+            && types.map((item) => (
               <li>
                 <Text>{item.type.name}</Text>
               </li>
@@ -80,8 +82,8 @@ const PokemonDetail = ({ id, name, types, height, abilities }) => {
       <SectionContainer column>
         <Label>Habilities:</Label>
         <ul>
-          {abilities &&
-            abilities.map((item) => (
+          {abilities
+            && abilities.map((item) => (
               <li>
                 <Text>{item.ability.name}</Text>
               </li>
@@ -90,6 +92,6 @@ const PokemonDetail = ({ id, name, types, height, abilities }) => {
       </SectionContainer>
     </Container>
   );
-};
+}
 
 export default PokemonDetail;

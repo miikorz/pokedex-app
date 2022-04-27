@@ -1,5 +1,5 @@
-import React from "react";
-import styled, { css } from "styled-components";
+import React from 'react';
+import styled, { css } from 'styled-components';
 
 const SectionDiv = styled.div`
   width: 100%;
@@ -7,15 +7,14 @@ const SectionDiv = styled.div`
   display: flex;
   justify-content: flex-start;
 
-  ${(props) =>
-    props.column &&
-    css`
+  ${(props) => props.column
+    && css`
       flex-direction: column;
     `}
 `;
 
-const SectionContainer = ({ children, column = false }) => {
+function SectionContainer({ children, column = false }) {
   return <SectionDiv column={column}>{children}</SectionDiv>;
-};
+}
 
 export default SectionContainer;

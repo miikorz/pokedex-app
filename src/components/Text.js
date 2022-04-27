@@ -1,5 +1,5 @@
-import React from "react";
-import styled from "styled-components";
+import React from 'react';
+import styled from 'styled-components';
 
 const TextDiv = styled.div`
   display: flex;
@@ -11,8 +11,8 @@ const TextDiv = styled.div`
   margin-left: 5px;
 `;
 
-const Text = ({ children }) => {
+function Text({ children }) {
   return <TextDiv>{children}</TextDiv>;
-};
+}
 
 export default Text;

@@ -1,5 +1,5 @@
-import React from "react";
-import styled from "styled-components";
+import React from 'react';
+import styled from 'styled-components';
 import { useNavigate } from 'react-router-dom';
 
 const Container = styled.div`
@@ -7,15 +7,16 @@ const Container = styled.div`
   border: 2px solid black;
   padding: 10px;
   &:hover {
-    background: #dad9d9;
+    background: #e9e9e9;
   }
   display: flex;
   flex-direction: column;
   align-items: center;
   cursor: pointer;
+  background-color: white;
 `;
 
-//TODO: image size bigger and position relative with z-index in order to make the effect of being above the container?
+// TODO: image size bigger and position relative with z-index in order to make the effect of being above the container?
 const Image = styled.img`
   height: 100px;
   width: 100px;
@@ -27,14 +28,14 @@ const TextContainer = styled.div`
   margin-top: 50px;
   margin-bottom: 20px;
   text-transform: capitalize;
-`
+`;
 
-const PokemonContainer = ({ name }) => {
+function PokemonContainer({ name }) {
   const navigate = useNavigate();
 
   const onHandleClick = () => {
     navigate(name);
-  }
+  };
 
   return (
     <Container key={name} onClick={onHandleClick}>
@@ -44,6 +45,6 @@ const PokemonContainer = ({ name }) => {
       <TextContainer>{name}</TextContainer>
     </Container>
   );
-};
+}
 
 export default PokemonContainer;
