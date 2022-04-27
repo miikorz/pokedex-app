@@ -16,7 +16,7 @@ const Container = styled.div`
   background-color: white;
 `;
 
-// TODO: image size bigger and position relative with z-index in order to make the effect of being above the container?
+// TODO?: image size bigger and position relative with z-index in order to make the effect of being above the container?
 const Image = styled.img`
   height: 100px;
   width: 100px;
